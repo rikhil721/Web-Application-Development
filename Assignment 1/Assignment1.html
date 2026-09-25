@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body> 
+        <!-- 1. Navigation Menu -->
+        <nav>
+            <ul>
+                <li> Matches </li>
+                <li> Book Tickets </li>
+                <li> My Bookings </li>
+                <li> Guidelines </li>
+            </ul>
+        </nav>
+
+        <!-- 2. About IPL 2026 -->
+        <h3> Popular Teams </h3>
+        <ul> 
+            <li> CSK </li>
+            <li> MI </li>
+            <li> RCB </li>
+            <li> SRH </li>
+        </ul>
+
+        <h3> Match Venues </h3>
+        <ul>
+            <li> Chennai </li>
+            <li> Dharmasthala </li>
+            <li> Bangalore </li>
+            <li> Hyderabad </li>
+        </ul>
+        
+        <!-- 3. Team Filtering -->
+          <label for="team">Filter:</label>
+          <select id="team" name="team"> 
+            <option value="all"> All Teams </option>
+            <option value="CSK"> CSK </option>
+            <option value="MI"> MI </option>
+            <option value="RCB"> RCB </option>
+            <option value="SRH"> SRH </option>
+          </select>
+        
+        <!-- 4. Match Schedule -->
+         <table border="1">
+            <thead>
+                <tr>
+                    <th rowspan="2"> Match No. </th>
+                    <th rowspan="2"> Teams </th>
+                    <th rowspan="2"> Date/Time </th>
+                    <th rowspan="2"> Venue </th>
+                    <th colspan="3"> Ticket Prices </th>
+                    <th rowspan="2"> Book Ticket </th>
+                </tr>
+                <tr>
+                    <th> General </th>
+                    <th> Premium </th>
+                    <th> VIP </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 1 </td> <td> CSK vs MI </td>
+                    <td> 12:00 </td> <td> Chennai </td>
+                    <td> 5000 </td> <td> 10000 </td> <td> 15000</td>
+                    <td> <button> Book </button></td>
+                </tr>
+
+                <tr>
+                    <td> 2 </td> <td> RCB vs CSK </td>
+                    <td> 18:30 </td> <td> Bengaluru </td>
+                    <td> 10000 </td> <td> 15000 </td> <td> 20000</td>
+                    <td> <button> Book</button></td>
+                </tr>
+
+                <tr>
+                    <td> 3 </td> <td> MI vs SRH </td>
+                    <td> 12:30 </td> <td> Dharmasthala </td>
+                    <td> 6000 </td> <td> 11000 </td> <td> 17000</td>
+                    <td> <button> Book </button></td>
+                </tr>
+         </table>
+
+         <!-- 5. Ticket Booking -->
+          <h2> Ticket Booking </h2>
+          <form action="/book" method="post">
+            <input type="hidden" name="match" value="01">
+            <button type="submit"> Book Tickets </button>
+            </form>
+
+            <form action="/confirm" method="post">
+                <label> Match </label>
+                <select name="match">
+                    <option value="1"> CSK vs MI </option>
+                    <option value="2"> RCB vs CSK </option>
+                    <option value="3"> MI vs SRH </option>
+                </select>
+
+                <label> Ticket Type </label>
+                <select name="ticket_type">
+                    <option value="general"> General </option>
+                    <option value="premium"> Premium </option>
+                    <option value="vip"> VIP </option>
+                </select>
+
+                <label> No. of Tickets </label>
+                <input type="number" min="1" required>
+                <label> Name </label>
+                <input type="text" required>
+                <label> Email </label>
+                <input type="email" required>
+                <label> Phone Number </label>
+                <input type="tel" required>
+                <button type="submit"> Confirm Booking </button>
+            </form>
+        
+            <!-- 6. My Bookings -->
+             <h2> My Ticket Bookings </h2>
+             <table border="1">
+                <thead>
+                    <tr>
+                        <th> Booking ID </th>
+                        <th> Match </th>
+                        <th> Ticket Type </th>
+                        <th> Tickets </th>
+                        <th> Phone number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 210023 </td> <td> RCB vs CSK </td> <td> VIP </td> <td> 4</td><td> 7829512019 </td>
+                    </tr>
+                    <tr>
+                        <td> 688462 </td> <td> MI vs CSK </td> <td> VIP </td> <td> 2</td><td> 9842456201 </td>
+                    </tr>
+                </tbody>
+            </table>
+    </body>
+</html>

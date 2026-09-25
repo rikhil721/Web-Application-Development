@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <nav>
+            <ul>
+                <li> Matches </li>
+                <li> Book Tickets </li>
+                <li> My Bookings </li>
+            </ul>
+        </nav>
+
+        <h2> Popular Teams </h2>
+        <ul> 
+            <li> Chennai Super Kings </li>
+            <li> Mumbai Indians </li>
+            <li> Royal Challengers Bangalore </li>
+        </ul>
+
+        <table border='1'>
+            <thead>
+                <tr>
+                    <th rowspan="2"> Match </th>
+                    <th rowspan="2"> Teams </th>
+                    <th rowspan="2"> Date/Time </th>
+                    <th rowspan="2"> Venue </th>
+                    <th colspan="3"> Ticket Prices </th>
+                    <th rowspan="2"> Booking </th>
+                </tr>
+                <tr>
+                    <th> General </th>
+                    <th> Premium </th>
+                    <th> VIP </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 1 </td> <td> CSK vs MI </td>
+                    <td> 12:00 </td> <td> Chennai </td>
+                    <td> 5000 </td> <td> 10000 </td> <td> 15000</td>
+                    <td> <button> Book </button></td>
+                </tr>
+
+                <tr>
+                    <td> 2 </td> <td> RCB vs KKR </td>
+                    <td> 18:30 </td> <td> Bengaluru </td>
+                    <td> 10000 </td> <td> 15000 </td> <td> 20000</td>
+                    <td> <button> Book </button></td>
+                </tr>
+
+                <tr>
+                    <td> 3 </td> <td> DC vs GT </td>
+                    <td> 12:30 </td> <td> Delhi </td>
+                    <td> 6000 </td> <td> 11000 </td> <td> 17000</td>
+                    <td> <button> Book </button></td>
+                </tr>
+
+                <tr>
+                    <td> 1 </td> <td> SRH vs PBKS </td>
+                    <td> 18:30 </td> <td> Hyderabad </td>
+                    <td> 10000 </td> <td> 15000 </td> <td> 20000</td>
+                    <td> <button> Book </button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Team Filter -->
+         <label for="team">Filter:</label>
+         <select id="team" name="team">
+            <option value="all"> All Teams </option>
+            <option value="csk"> CSK </option>
+            <option value="mi"> MI </option>
+            <option value="rcb"> RCB </option>
+            <option value="KKR"> KKR </option>
+            <option value="DC"> DC </option>
+            <option value="GT"> GT </option>
+         </select>
+
+         <!-- Book Button -->
+          <form action="/book" method="post">
+            <input type="hidden" name="match" value="01">
+            <button type="submit"> Book </button>
+          </form>
+
+          <form action="/confirm" method="post">
+            <select name="match">...</select>
+            <label> Stand Category </label>
+            <select name="stand">
+                <option> General </option>
+                <option> Premium </option>
+                <option> VIP </option>
+            </select>
+
+            <label> No. of Tickets: </label>
+            <input type="number" min="1">
+            <label> Name </label>
+            <input type="text" required>
+            <label> Email </label>
+            <input type="email" required>
+            <label> Phone number </label>
+            <input type="tel" required>
+            <button type="submit"> Confirm </button>
+          </form>
+    </body>
+</html>

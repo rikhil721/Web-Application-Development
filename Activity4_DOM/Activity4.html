@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL 2026 Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">IPL 2026</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#matches">Matches</a></li>
+                    <li><a href="#book">Book Ticket</a></li>
+                    <li><a href="#my-bookings">My Bookings</a></li>
+                    <li><a href="#guidelines">Guidelines</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero / Banner Section -->
+        <section class="hero">
+            <h1>Experience The Stadium Energy Live!</h1>
+            <p>Book official tickets for IPL 2026 matches across all major stadiums.</p>
+            <div class="hero-buttons">
+                <a href="#matches" class="btn btn-primary">View Schedule</a>
+                <a href="#book" class="btn btn-secondary">Book Ticket</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- About IPL 2026 Section -->
+            <section id="about" class="section-card">
+                <h2>About IPL 2026</h2>
+
+                <!-- Activity 5: Dynamic Match Information Target -->
+                <h2>About IPL Match</h2>
+                <p id="demo"></p>
+                <br>
+
+                <div class="about-grid">
+                    <div>
+                        <h3>Popular Teams</h3>
+                        <ul>
+                            <li>Chennai Super Kings (CSK)</li>
+                            <li>Royal Challengers Bengaluru (RCB)</li>
+                            <li>Mumbai Indians (MI)</li>
+                            <li>Kolkata Knight Riders (KKR)</li>
+                            <li>Sunrisers Hyderabad (SRH)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Major Match Venues</h3>
+                        <ul>
+                            <li>M. A. Chidambaram Stadium, Chennai</li>
+                            <li>M. Chinnaswamy Stadium, Bengaluru</li>
+                            <li>Wankhede Stadium, Mumbai</li>
+                            <li>Eden Gardens, Kolkata</li>
+                            <li>Arun Jaitley Stadium, Delhi</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Match Schedule Section -->
+            <section id="matches" class="section-card">
+                <h2>Match Schedule</h2>
+                
+                <div class="filter-wrapper">
+                    <label for="team-filter"><strong>Filter by Team:</strong></label>
+                    <select id="team-filter" name="team">
+                        <option value="all">All Teams</option>
+                        <option value="csk">Chennai Super Kings</option>
+                        <option value="rcb">Royal Challengers Bengaluru</option>
+                        <option value="mi">Mumbai Indians</option>
+                        <option value="kkr">Kolkata Knight Riders</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Match No.</th>
+                                <th rowspan="2">Teams</th>
+                                <th rowspan="2">Date & Time</th>
+                                <th rowspan="2">Venue</th>
+                                <th colspan="3">Ticket Prices</th>
+                                <th rowspan="2">Action</th>
+                            </tr>
+                            <tr>
+                                <th>General</th>
+                                <th>Premium</th>
+                                <th>VIP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Match 01</td>
+                                <td>CSK vs RCB</td>
+                                <td>Mar 28, 2026 - 7:30 PM</td>
+                                <td>Chennai</td>
+                                <td>₹1,500</td>
+                                <td>₹4,000</td>
+                                <td>₹10,000</td>
+                                <td><button type="button" class="bookBtn" data-match="1">Book</button></td>
+                            </tr>
+                            <tr>
+                                <td>Match 02</td>
+                                <td>MI vs KKR</td>
+                                <td>Mar 29, 2026 - 7:30 PM</td>
+                                <td>Mumbai</td>
+                                <td>₹1,200</td>
+                                <td>₹3,500</td>
+                                <td>₹8,500</td>
+                                <td><button type="button" class="bookBtn" data-match="2">Book</button></td>
+                            </tr>
+                            <tr>
+                                <td>Match 03</td>
+                                <td>RCB vs SRH</td>
+                                <td>Apr 02, 2026 - 3:30 PM</td>
+                                <td>Bengaluru</td>
+                                <td>₹1,800</td>
+                                <td>₹4,500</td>
+                                <td>₹12,000</td>
+                                <td><button type="button" class="bookBtn" data-match="3">Book</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Booking Section -->
+            <section id="book" class="section-card">
+                <h2>Ticket Booking</h2>
+                <div class="booking-layout">
+                    <!-- Ticket Booking Form -->
+                    <div class="card form-card">
+                        <h3>Book Your Seats</h3>
+                        <form id="bookingForm" action="#" method="post">
+                            <div class="form-group">
+                                <label for="match">Select Match</label>
+                                <select id="match" name="match" required>
+                                    <option value="">-- Choose Match --</option>
+                                    <option value="1">Match 01: CSK vs RCB</option>
+                                    <option value="2">Match 02: MI vs KKR</option>
+                                    <option value="3">Match 03: RCB vs SRH</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="stand">Stand Category</label>
+                                <select id="stand" name="stand" required>
+                                    <option value="general">General</option>
+                                    <option value="premium">Premium</option>
+                                    <option value="vip">VIP</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tickets">Number of Tickets</label>
+                                <input type="number" id="tickets" name="tickets" min="1" max="10" value="2" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="9876543210" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary submit-btn">Confirm Booking</button>
+                        </form>
+                    </div>
+
+                    <!-- Booking Summary Card -->
+                    <div class="summary-card" id="summary-card">
+                        <h3>Booking Summary</h3>
+                        <div class="summary-item">
+                            <span>Selected Match:</span>
+                            <strong>CSK vs RCB (Match 01)</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>Stand Category:</span>
+                            <strong>General Stand</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>Ticket Price:</span>
+                            <strong>₹1,500</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>Quantity:</span>
+                            <strong>2 Tickets</strong>
+                        </div>
+                        <hr class="summary-divider">
+                        <div class="summary-item total">
+                            <span>Total Amount:</span>
+                            <strong>₹3,000</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Ticket Bookings Section -->
+            <section id="my-bookings" class="section-card">
+                <h2>My Ticket Bookings</h2>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Match Details</th>
+                                <th>Category</th>
+                                <th>Seats</th>
+                                <th>Total Paid</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Empty table reserved for future bookings -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Guidelines Section -->
+            <section id="guidelines" class="section-card">
+                <h2>Stadium Guidelines</h2>
+                <div class="guidelines-grid">
+                    <div class="card guideline-card">
+                        <h3>1. Ticket Verification</h3>
+                        <p>E-tickets with valid QR codes must be displayed on mobile devices or physical printouts at the entry turnstiles.</p>
+                    </div>
+                    <div class="card guideline-card">
+                        <h3>2. ID Proof Requirement</h3>
+                        <p>All ticket holders must present a valid government-issued photo ID matching the ticket name.</p>
+                    </div>
+                    <div class="card guideline-card">
+                        <h3>3. Prohibited Items</h3>
+                        <p>Bags, power banks, coins, cameras, water bottles, and outside food items are strictly prohibited inside the stadium.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 IPL Official Ticket Booking Portal. All rights reserved.</p>
+    </footer>
+
+    <!-- Toast Notification paragraph -->
+    <p id="toast"></p>
+
+    <!-- Link your JS at the bottom -->
+    <script src="app.js"></script>
+</body>
+</html>
